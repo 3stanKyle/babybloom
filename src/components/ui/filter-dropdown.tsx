@@ -25,7 +25,7 @@ const filters = [
 
 export function FilterDropdown() {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("all");
+  const [selectedValue, setValue] = React.useState("all");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -36,15 +36,13 @@ export function FilterDropdown() {
           aria-expanded={open}
           className="w-[200px] justify-between bg-white"
         >
-          {value
-            ? filters.find((filter) => filter.value === value)?.label
-            : "Select filter..."}
+          {filters.find((filter) => filter.value === selectedValue)?.label || "Select filter..."}
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0 bg-white">
         <Command>
-          <CommandInput placeholder="Search filter..." />
+          <CommandInput placeholder="Search filter..." className="h-9" />
           <CommandEmpty>No filter found.</CommandEmpty>
           <CommandGroup>
             {filters.map((filter) => (
@@ -52,14 +50,14 @@ export function FilterDropdown() {
                 key={filter.value}
                 value={filter.value}
                 onSelect={(currentValue) => {
-                  setValue(currentValue);
+                  setValue(currentValue === selectedValue ? "" : currentValue);
                   setOpen(false);
                 }}
               >
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    value === filter.value ? "opacity-100" : "opacity-0"
+                    selectedValue === filter.value ? "opacity-100" : "opacity-0"
                   )}
                 />
                 {filter.label}
