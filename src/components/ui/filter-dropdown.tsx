@@ -21,7 +21,7 @@ const filters = [
   { value: "used", label: "Used Items" },
   { value: "free", label: "Free Items" },
   { value: "wishlist", label: "Wishlist" },
-];
+] as const;
 
 export function FilterDropdown() {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +34,7 @@ export function FilterDropdown() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between bg-white"
         >
           {value
             ? filters.find((filter) => filter.value === value)?.label
@@ -42,7 +42,7 @@ export function FilterDropdown() {
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-[200px] p-0 bg-white">
         <Command>
           <CommandInput placeholder="Search filter..." />
           <CommandEmpty>No filter found.</CommandEmpty>
