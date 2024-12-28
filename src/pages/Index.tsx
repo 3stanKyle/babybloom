@@ -11,7 +11,7 @@ const products = [
     condition: "New",
     location: "San Francisco, CA",
     type: "Sale",
-    image: "https://images.unsplash.com/photo-1591335598664-20159b11f4a9",
+    image: "https://images.pexels.com/photos/4964276/pexels-photo-4964276.jpeg",
   },
   {
     title: "Organic Cotton Baby Blanket",
@@ -19,7 +19,7 @@ const products = [
     condition: "New",
     location: "Los Angeles, CA",
     type: "Sale",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af",
+    image: "https://images.pexels.com/photos/4964288/pexels-photo-4964288.jpeg",
   },
   {
     title: "Baby Carrier - Ergobaby 360",
@@ -27,7 +27,7 @@ const products = [
     condition: "Used",
     location: "Seattle, WA",
     type: "Free",
-    image: "https://images.unsplash.com/photo-1567593810070-7a3d471af022",
+    image: "https://images.pexels.com/photos/29234753/pexels-photo-29234753/free-photo-of-cozy-baby-blanket-in-wicker-basket.jpeg",
   },
   {
     title: "Nursery Rocking Chair",
@@ -35,7 +35,7 @@ const products = [
     condition: "Used",
     location: "Portland, OR",
     type: "Sale",
-    image: "https://images.unsplash.com/photo-1586105449897-20b5efeb3233",
+    image: "https://images.pexels.com/photos/6582167/pexels-photo-6582167.jpeg",
   },
 ] as const;
 
